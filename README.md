@@ -1,10 +1,10 @@
 # ETH-BEGGINER-COURSE
 ## FINAL PROJECT - MyToken
 
-Hey! This code is made to create a token on the Ethereum blockchain. It perform operatons such as token creation (minting) and token destruction (burning). The token is named "Ubuntu" with the symbol "UB". It keeps track of the total supply and the balances of each address in the ethereum.
+Hey! This code is made to create a token on the Ethereum blockchain. It perform operatons such as token creation (minting) and token destruction (burning). The token is named "SHARK" with the symbol "SRK". It keeps track of the total supply and the balances of each address in the ethereum.
 ## Description
 
-The Ubuntu(UB) token contract offers essential token functionalities on the Ethereum blockchain. It defines the token's name, symbol, and total supply through public variables and uses mappings to track user balances. 
+The SHARK(SRK) token contract offers essential token functionalities on the Ethereum blockchain. It defines the token's name, symbol, and total supply through public variables and uses mappings to track user balances. 
 ## Getting Started
 
 ### Installing
@@ -48,27 +48,30 @@ pragma solidity 0.8.18;
 contract MyToken {
 
     // public variables here
-    string public tokenName = "Ubuntu";
-    string public tokenAbbrv = "UB";
-    uint public totalSupply = 0; 
+    string public tokenName = "SHARK";
+    string public tokenAbbrv = "SRK";
+    uint public totalSupply = 0;
 
     // mapping variable here
-    mapping ( address => uint) public balances;
+    mapping(address => uint) public balances;
 
     // mint function
-    function mint(address _add,uint _val) public {
-        totalSupply += _val;
-        balances[_add] += _val;
+    function mint(address _address, uint _value) public 
+    {
+        totalSupply += _value;
+        balances[_address] += _value;
     }
 
     // burn function
-    function burn(address _add,uint _val) public {
-        if(balances[_add] >= _val){
-        totalSupply -= _val;
-        balances[_add] -= _val;
+    function burn(address _address, uint _value) public 
+    {
+        if( balances[_address] >= _value)
+        {
+            totalSupply -= _value;
+            balances[_address] -= _value;
+
         }
     }
-
 }
 
 ```
@@ -92,8 +95,7 @@ When facing issues with the execution and operation of your smart contract, simp
 
 Contributors names and contact info
 
-  Aayush Tewari  
-  taayush1912@gmail.com
+  Vipul
 
 
 ## License
